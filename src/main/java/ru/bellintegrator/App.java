@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/test")
 public class App extends HttpServlet {
+
     @Autowired
     LocationsDao locationsDao;
 
@@ -26,7 +27,7 @@ public class App extends HttpServlet {
         try {
             locationsDao.saveLocations(locations);
         }catch (Exception e) {
-            System.out.println("Error!!!!!!!!!!!!");
+            e.printStackTrace();
         }
 
         resp.getWriter().println("Hello from servlet");
